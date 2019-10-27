@@ -18,7 +18,7 @@ wss.on('connection', (ws) => {
     console.log('Client connected');
     ws.on('message', (msg) => {
         let data = JSON.parse(msg);
-
+        console.log(msg);
         switch (data.msgType) {
             case "auth":
                 ws.userType = data.userType;
@@ -27,17 +27,14 @@ wss.on('connection', (ws) => {
                 break;
             case "chat":
                 wss.clients.forEach((c) => {
-                    if (c.userType == 'user')
+                    if (c.userType === 'user')
                         c.send(msg);
                 });
                 break;
             case "control":
                 wss.clients.forEach((c) => {
-                    if (c.userType == 'hw')
-                        c.send(JSON.stringify({
-                            msgType: data.msgType,
-                            leds: msg.leds
-                        }))
+                    if (c.userType !== ws.userType)
+                        c.send(msg);
                 });
                 break;
         }

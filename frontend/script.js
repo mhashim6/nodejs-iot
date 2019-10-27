@@ -29,6 +29,14 @@ sendBtn.onclick = () => {
     }));
     msgBox.value = '';
 };
+let leds = [led1, led2, led3];
+let btns = [led1_btn, led2_btn, led3_btn];
+btns.forEach((btn, i) => btn.onclick = () => {
+    ws.send(JSON.stringify({
+        msgType: 'control',
+        led: i
+    }));
+});
 
 ws.onmessage = (msg) => {
     let data = JSON.parse(msg.data);
@@ -38,6 +46,7 @@ ws.onmessage = (msg) => {
             chatBox.innerHTML += newMsg(data.sender, data.chatMsg);
             break;
         case "control":
+            leds[data.led].className = leds[data.led].className === 'on'? 'off' : 'on';
             break;
     }
 
@@ -48,4 +57,4 @@ ws.onopen = () => {
 };
 
 const newMsg = (name, msg) =>
-    `<div class="${name == username ? 'homeMsg' : 'outsiderMsg'} msg">${name != username ? `<p class="userName">${name}</p>` : ''}${msg}</div>`;
+    `<div class="${name === username ? 'homeMsg' : 'outsiderMsg'} msg">${name !== username ? `<p class="userName">${name}</p>` : ''}${msg}</div>`;

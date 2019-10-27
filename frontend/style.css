@@ -84,11 +84,11 @@ body {
     flex: 1;
 }
 
-.onBtn {
+.on {
     color: darkgreen;
 }
 
-.offBtn {
+.off {
     color: darkred;
 }
 
