@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> CSE IoT Lab</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+
+<div id="login_panel" class="framed">
+    <label>
+        Username
+        <input id="name_input" type="text">
+    </label>
+    <button id="login">Login</button>
+</div>
+
+<div id="main_panel" class="hidden">
+    <div id="chat_panel" class="framed">
+        <div id="chat_box" class="framed"></div>
+        <div id="chat_controls">
+            <input id="chat_input" type="text">
+            <button id="chat_send">Send</button>
+        </div>
+    </div>
+
+    <div id="control_panel" class="framed">
+        <div class="led">
+            <label>Led 1</label>
+            <button class="onBtn" id="led1_on">ON</button>
+            <button class="offBtn" id="led1_off">OFF</button>
+        </div>
+        <div class="led">
+            <label>Led 2</label>
+            <button class="onBtn" id="led2_on">ON</button>
+            <button class="offBtn" id="led2_off">OFF</button>
+        </div>
+        <div class="led">
+            <label>Led 3</label>
+            <button class="onBtn" id="led3_on">ON</button>
+            <button class="offBtn" id="led3_off">OFF</button>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+</html>

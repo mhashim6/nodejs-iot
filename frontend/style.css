@@ -1,0 +1,104 @@
+body {
+    padding: 1%;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login_panel {
+}
+
+#login {
+}
+
+#main_panel {
+    min-width: 90%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+@media only screen and (min-width: 768px) {
+    #main_panel {
+        min-height: 30em;
+        min-width: 35em;
+    }
+}
+
+#chat_panel {
+    padding: 2%;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+#chat_box {
+    flex: 1;
+    min-height: 15em;
+    max-height: 15em;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    padding: 2%;
+    background-color: white;
+}
+
+.msg{
+    margin-top: 1%;
+    padding: 1.5%;
+    border-radius: 15px;
+}
+
+.outsiderMsg {
+    align-self: flex-start;
+    background-color: #f1f0f0;
+}
+
+.homeMsg {
+    align-self: flex-end;
+    color: white;
+    background-color: #0084ff;
+}
+
+.userName {
+    font-weight: bold;
+}
+
+#chat_controls {
+    margin-top: 4%;
+    align-self: center;
+}
+
+#control_panel {
+    margin-top: 2%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.led {
+    flex: 1;
+}
+
+.onBtn {
+    color: darkgreen;
+}
+
+.offBtn {
+    color: darkred;
+}
+
+.framed {
+    padding: 1%;
+    border: solid 1px cadetblue;
+    border-radius: 5px;
+}
+
+.hidden {
+    visibility: hidden;
+    display: none;
+}
