@@ -1,4 +1,4 @@
-const HOST = "ws://https://iot-chat-mhashim6.herokuapp.com/";
+const HOST = "ws://iot-chat-mhashim6.herokuapp.com/";
 ws = new WebSocket(HOST);
 
 let username;
