@@ -1,4 +1,4 @@
-const HOST = "ws://localhost:9000";
+const HOST = "ws://https://iot-chat-mhashim6.herokuapp.com/";
 ws = new WebSocket(HOST);
 
 let username;
