@@ -26,7 +26,7 @@ void websocketEvent(WStype_t type, uint8_t *data, size_t length) {
       int outPutN = led + 4;
       digitalWrite(outPutN, !digitalRead(outPutN));
       char *sentMessage;
-      sprintf(sentMessage, "{\"msgType\":\"control\",\"led\":\"%d\"}", outPutN);
+      sprintf(sentMessage, "{\"msgType\":\"control\",\"led\":\"%d\"}", led);
       NodeWSocket.sendTXT(sentMessage);
   }
 }
